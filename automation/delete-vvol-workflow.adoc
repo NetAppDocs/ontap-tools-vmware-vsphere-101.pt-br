@@ -1,0 +1,53 @@
+---
+permalink: automation/delete-vvol-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Exclua o armazenamento de dados vVols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um datastore vVols existe desde que pelo menos um FlexVol volume esteja disponível no datastore. Se você quiser excluir um datastore vVols em um cluster HA, primeiro desmonte o datastore de todos os hosts do cluster HA e exclua a pasta _.vsphere-HA_ residente manualmente usando a interface de usuário do vCenter Server.
+
+*Passos*
+
+Use a seguinte API para excluir o armazenamento de dados vVols.
+
+[listing]
+----
+DELETE
+​/virtualization​/api​/v1​/vcenters​/{vcguid}​/vvols​/datastores​/{moref}
+----
+Exemplos
+
+* Exclua o datastore vVols e exclua volumes do storage
+
+
+[listing]
+----
+  DELETE /api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-28?delete_volumes=true
+----
+
+NOTE: Excluir o fluxo de trabalho do vVols datastore exclui os volumes do datastore se você tiver passado o sinalizador delete_volume como verdadeiro, independentemente de o datastore-volume ser gerenciado ou não gerenciado.
+
+* Exclua o armazenamento de dados vVols e não exclua volumes do armazenamento
+
+
+[listing]
+----
+  DELETE /api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-28?delete_volumes=false
+----
+Resposta:
+
+[listing]
+----
+{
+
+    "id": "1889"
+
+}
+----

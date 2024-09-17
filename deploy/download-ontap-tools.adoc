@@ -1,0 +1,35 @@
+---
+permalink: deploy/download-ontap-tools.html 
+sidebar: sidebar 
+keywords:  
+summary: Você pode baixar o arquivo .ova para as ferramentas do ONTAP para VMware vSphere no site de suporte da NetApp. 
+---
+= Faça o download das ferramentas do ONTAP para VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode fazer o download do `.zip` arquivo que contém binários (_.ova_) e certificados assinados para as ferramentas do ONTAP para VMware vSphere no https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["Site de suporte da NetApp"^] .
+
+Quando a implantação estiver concluída, as ferramentas do ONTAP para os produtos VMware vSphere e VASA são instaladas em seu ambiente. Por padrão, as ferramentas do ONTAP para VMware vSphere começam a funcionar assim que você decidir sobre o modelo de implantação e escolher se deseja ativar o provedor VASA com base em seus requisitos. link:../configure/registration-process.html["Registre o provedor VASA com uma instância do vCenter Server"]Consulte para obter detalhes.
+
+
+
+== Biblioteca de conteúdo
+
+Uma biblioteca de conteúdo no VMware é um objeto de contentor que armazena modelos de VM, modelos vApp e outros tipos de arquivos. A implantação com biblioteca de conteúdo oferece uma experiência perfeita, pois não depende da conetividade de rede.
+
+
+NOTE: Você deve armazenar a biblioteca de conteúdo em um datastore compartilhado, de modo que todos os hosts em um cluster possam acessá-la. Você precisa criar uma biblioteca de conteúdo para armazenar o OVA antes de implantar o OVA na configuração HA. Crie a biblioteca de conteúdo usando as seguintes etapas:
+
+*Passos*
+
+. Faça login no cliente vSphere usando `\https://vcenterip/ui`
+. Selecione as elipses horizontais ao lado do cliente vSphere e selecione *Content Library*.
+. Selecione *criar* à direita da página.
+. Forneça um nome para a biblioteca e crie a biblioteca de conteúdo.
+. Navegue até a biblioteca de conteúdo que você criou.
+. Selecione *ações* à direita da página e selecione *Importar item* e importe o arquivo OVA.
+

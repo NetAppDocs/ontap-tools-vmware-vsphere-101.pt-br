@@ -1,0 +1,96 @@
+---
+permalink: release-notes/whats-new-otv-101.html 
+sidebar: sidebar 
+keywords: 'what"s new, release notes, otv, 10.1, ONTAP tools for VMware vSphere' 
+summary: Saiba mais sobre os novos recursos disponíveis nas ferramentas do ONTAP para VMware vSphere 10,1. 
+---
+= Novidades nas ferramentas do ONTAP para o VMware vSphere 10,1
+:allow-uri-read: 
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis nas ferramentas do ONTAP para VMware vSphere 10,1.
+
+[cols="30%,70%"]
+|===
+| Atualização | Descrição 
+
+
+ a| 
+xref:../manage/migrate-standard-virtual-machines-to-vvols-datastores.html[Suporte ao armazenamento de dados NFS e VMFS]
+ a| 
+Esta versão das ferramentas do ONTAP para VMware vSphere oferece suporte ao provisionamento de armazenamento de dados vVols por meio do provedor VASA e armazenamentos de dados NFS v3 e VMFS. Operações de datastore como criar, redimensionar, montar, desmontar e excluir são suportadas. Você pode provisionar armazenamentos de dados VMFS usando o protocolo iSCSI. Como administrador da VMware, você pode implantar, atualizar e fazer a transição de armazenamentos de dados iSCSI VMFS de ferramentas do ONTAP para a versão do VMware vSphere 9.xx para a versão 10,1. A migração é compatível com as ferramentas do ONTAP para as versões do VMware vSphere 9.10D2, 9.11D4, 9,12 e 9,13 para a versão 10,1.
+
+
+
+ a| 
+xref:../protect/configure-storage-replication-adapter-for-san-environment.html[Adaptador de replicação de storage (SRA) para armazenamentos de dados NFS e VMFS]
+ a| 
+O SRA implementa a recuperação de desastres (DR) baseada na especificação do VMware Site Recovery Manager (SRM). Para datastores NFS, os volumes ONTAP são montados no host ESXi usando protocolos NFS v3. Para armazenamentos de dados VMFS, OS LUNS ONTAP são montados no host ESXi usando o protocolo iSCSI.
+
+As relações do ONTAP SnapMirror replicam volumes e LUNs no local de destino. O SRA implementa testFailover, failover e reprotect comandos invocados a partir do VMware SRM. Como parte da implementação, o SRA garante que todos os volumes e LUNs sejam montáveis no destino em incidentes de recuperação e que os volumes e LUNs do local secundário sejam lidos para evitar a discrepância de dados.
+
+
+
+ a| 
+xref:../configure/dashboard-overview.html[Suporte à integração Rich vCenter User Interface (UI) para todos os fluxos de trabalho]
+ a| 
+As ferramentas do ONTAP para VMware vSphere 10,1 fornecem uma interface gráfica de usuário para fluxos de trabalho para trazer paridade com as ferramentas do ONTAP para as versões do VMware vSphere 9.xx. O plug-in remoto suporta:
+
+* xref:../manage/migrate-standard-virtual-machines-to-vvols-datastores.html[Observabilidade e monitoramento de armazenamentos de dados NFS, VMFS e vVols]
+* xref:../protect/configure-storage-replication-adapter-for-san-environment.html[Adaptador de replicação de storage para armazenamentos de dados NFS e VMFS]
+* xref:../configure/registration-process.html[Registro e cancelamento de Registro do provedor VASA]
+* xref:../configure/install-nfs-vaai-plug-in.html[Instalação do plug-in VAAI]
+* xref:../manage/collect-the-log-files.html[Download do pacote de log para o vCenter selecionado]
+
+
+
+
+ a| 
+xref:../deploy/nonha-deployment.html[Suporte de variante de implantação fácil]
+ a| 
+Você pode integrar rapidamente as ferramentas do ONTAP para VMware vSphere 10,1 e experimentar seus recursos usando a opção de implantação fácil. A recuperação baseada em snapshot é compatível com a implantação fácil.
+
+
+
+ a| 
+xref:../configure/manager-user-interface.html[UI do Gerenciador de ferramentas do ONTAP para todos os fluxos de trabalho de administração de ferramentas do ONTAP]
+ a| 
+O Gerenciador de ferramentas do ONTAP fornece melhor controle ao administrador de ferramentas do ONTAP sobre as instâncias do vCenter gerenciado e os back-ends de storage integrados. O Gerenciador de ferramentas do ONTAP ajuda a:
+
+* Gerenciamento do vCenter - Adicione e gerencie instâncias do vCenter às ferramentas do ONTAP para VMware vSphere.
+* Gerenciamento de back-end de storage: Adicione e gerencie clusters de storage do ONTAP às ferramentas do ONTAP para VMware vSphere e mapeie-os para instâncias integradas do vCenter globalmente.
+* Downloads do pacote de log - coletar arquivos de log para as ferramentas do ONTAP para VMware vSphere.
+* Gerenciamento de certificados - altere o certificado autoassinado para certificado CA personalizado e renove ou atualize todos os certificados.
+* Gerenciamento de senhas - Repor a senha do aplicativo OVA para o usuário.
+
+
+
+
+ a| 
+xref:../manage/certificate-manage.html[Gerenciamento de certificados]
+ a| 
+Uma única instância das ferramentas do ONTAP para VMware vSphere pode gerenciar várias instâncias do vCenter. Ao implantar as ferramentas do ONTAP para VMware vSphere, o certificado autoassinado é atribuído a todas as instâncias do vCenter por padrão. Ao gerenciar várias instâncias do vCenter e desejar habilitar o recurso vVols em várias instâncias do vCenter, você deve alterar o certificado autoassinado para certificado de CA personalizado usando a interface do Gerenciador de ferramentas do ONTAP. Você pode usar a mesma interface para renovar ou atualizar todos os certificados.
+
+
+
+ a| 
+xref:../concepts/ontap-tools-concepts-terms.html[Recuperação do objetivo do ponto de restauração (RPO)]
+ a| 
+Se você perder suas ferramentas do ONTAP para a configuração do VMware vSphere, poderá recuperar a configuração das ferramentas do ONTAP usando o software de gerenciamento de dados do ONTAP sem perda de dados. A recuperação zero RPO não é compatível para opções de implantação fáceis.
+
+
+
+ a| 
+Suporte ao protocolo iSCSI para implantação
+ a| 
+O Trident dá suporte aos protocolos NFS e iSCSI para provisionar volumes persistentes. Ao implantar as ferramentas do ONTAP para o VMware vSphere, você pode usar o protocolo iSCSI para armazenar dados de serviços do provedor VASA em volumes persistentes.
+
+
+
+ a| 
+Suporte de endereço IPv6 para armazenamento e integração do vCenter
+ a| 
+Você pode integrar backends de armazenamento com endereços IPv4, endereços IPv6 ou nomes de domínio totalmente qualificados (FQDNs). Os serviços de storage e os serviços de proxy de armazenamento usam credenciais integradas com os mesmos endereços IPv4 ou IPv6 para se comunicar com a API REST do ONTAP. A interrupção de dados é suportada com endereços IPv4, endereços IPv6 ou FQDN usando regras de política de exportação.
+
+|===

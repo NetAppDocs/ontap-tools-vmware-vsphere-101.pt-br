@@ -1,0 +1,34 @@
+---
+permalink: automation/onboard-svm-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Back-end de storage integrado (SVM ou cluster) com uma instância do vCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use a API a seguir para integrar os back-ends de storage e mapear o SVM para o vCenter localmente. link:../configure/configure-user-role-and-privileges.html["Configurar as funções de usuário do ONTAP e o Privileges"]Consulte a seção para ver o Privileges do usuário do ONTAP SVM.
+
+[listing]
+----
+POST /virtualization/api/v1/vcenters/<vcguid>/storage-backends
+
+{
+     "hostname_or_ip": "172.21.103.107",
+     "username": "svm11",
+     "password": "xxxxxx"
+   }
+----
+
+NOTE: O ID da resposta da API acima é usado na descoberta.
+
+Você precisa passar o x-auth para a API. Você pode gerar esse x-auth a partir da nova API adicionada em Auth no Swagger.
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----

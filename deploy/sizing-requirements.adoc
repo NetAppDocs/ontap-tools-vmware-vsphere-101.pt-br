@@ -1,0 +1,91 @@
+---
+permalink: deploy/sizing-requirements.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Antes de implantar as ferramentas do ONTAP para o VMware vSphere, você deve estar familiarizado com os requisitos de espaço para o pacote de implantação e alguns requisitos básicos do sistema de host. 
+---
+= Pré-requisitos para implantar ferramentas do ONTAP para VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar as ferramentas do ONTAP para o VMware vSphere, você deve estar familiarizado com os requisitos de espaço para o pacote de implantação e alguns requisitos básicos do sistema de host.
+
+Você pode usar as ferramentas do ONTAP para VMware vSphere com o VMware vCenter Server Virtual Appliance (vCSA). Você deve implantar as ferramentas do ONTAP para o VMware vSphere em um cliente vSphere compatível que inclua o sistema ESXi.
+
+* * Requisitos de espaço do pacote de instalação por nó*
++
+** 10 GB para instalações com provisionamento reduzido
+** 248 GB para instalações com provisionamento espesso
+
+
+* *Requisitos de dimensionamento do sistema anfitrião por nó* a memória recomendada de acordo com o tamanho da implementação e por nó é como mostrado na tabela abaixo:
+
+
+|===
+
+
+| *Tipo de implantação* | *CPUs* | *Memória (GB)* 
+
+
+| Pequeno (S) | 8 | 16 
+
+
+| Médio (M) | 12 | 24 
+
+
+| Grande (L) | 16 | 32 
+|===
+link:../deploy/config-limits.html["Limites de configuração para implantar as ferramentas do ONTAP para o VMware vSphere"]Consulte para obter mais detalhes.
+
+
+
+== Requisitos mínimos de storage e aplicativos
+
+|===
+| Storage, host e aplicações | Requisitos mínimos de versão 
+
+
+| ONTAP | Versão de patch mais recente do ONTAP 9.12,1, 9.13.1 ou 9.14.1 
+
+
+| Hosts ESXi | ESXi 7.0.3 
+
+
+| Servidor vCenter | VCenter 7.0U3 
+
+
+| Fornecedor VASA | 3,0 
+
+
+| Aplicação OVA | 10,1 
+|===
+A ferramenta de Matriz de interoperabilidade (IMT) contém as informações mais recentes sobre as versões suportadas do ONTAP, vCenter Server, hosts ESXi e aplicativos de plug-in.
+
+https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["Ferramenta de Matriz de interoperabilidade"^]
+
+
+
+== Considerações adicionais de implantação
+
+Você deve considerar alguns requisitos ao personalizar a implantação de ferramentas do ONTAP.
+
+
+
+=== Senha do usuário do aplicativo
+
+Esta é a palavra-passe atribuída à conta de administrador. Por razões de segurança, recomenda-se que o comprimento da senha tenha de oito a trinta carateres e contenha um mínimo de um caractere superior, um inferior, um dígito e um especial.
+
+
+
+=== Credenciais do console de manutenção do dispositivo
+
+Você deve acessar o console de manutenção usando o nome de usuário "mal". Você pode definir a senha para o usuário "não" durante a implantação. Você pode usar a opção Restart Guest os disponível durante a reinicialização da VM no vCenter Server para alterar a senha.
+
+
+
+=== Propriedades da rede do dispositivo
+
+Especifique um nome de host DNS válido (não qualificado), bem como o endereço IP estático para as ferramentas do ONTAP para VMware vSphere e os outros parâmetros de rede. Os endereços IP fornecidos devem estar acessíveis a partir da rede VLAN que você selecionar durante a implantação. O DHCP não é compatível com as ferramentas do ONTAP para a versão do VMware vSphere 10,1. Todos esses parâmetros são necessários para a instalação e operação adequadas.

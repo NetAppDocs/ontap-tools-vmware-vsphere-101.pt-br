@@ -1,0 +1,78 @@
+---
+permalink: deploy/config-limits.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Limites de configuração para implantar as ferramentas do ONTAP para o VMware vSphere 
+---
+= Limites de configuração para implantar as ferramentas do ONTAP para o VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar a tabela a seguir como um guia para configurar as ferramentas do ONTAP para o VMware vSphere.
+
+|===
+
+
+| *Implantação* | *Tipo* | *Número de vVols* | *Número de hosts* | *Tipo de protocolo* 
+
+
+| Implantação fácil | Pequeno (S) | 12K | 32 | NFS, iSCSI 
+
+
+| Implantação fácil | Médio (M) | 24K | 64 | NFS, iSCSI 
+
+
+| Alta disponibilidade | Pequeno (S) | 24K | 64 | NFS, iSCSI 
+
+
+| Alta disponibilidade | Médio (M) | 50k | 128 | NFS, iSCSI 
+
+
+| Alta disponibilidade | Grande (L) | 100k | 256 [NOTA] o número de hosts na tabela mostra o número total de hosts de vários vCenters. | NFS, iSCSI 
+|===
+Para obter detalhes sobre os requisitos de dimensionamento do sistema host por nó, link:../deploy/sizing-requirements.html["Pré-requisitos para implantar ferramentas do ONTAP para VMware vSphere"]consulte .
+
+
+
+== Ferramentas do ONTAP para VMware vSphere - adaptador de replicação de armazenamento (SRA)
+
+A tabela a seguir mostra os números suportados por instância do SRM usando as ferramentas do ONTAP para VMware vSphere.
+
+|===
+| * Tamanho da implantação do vCenter* | *Pequeno* | *Médio* 
+
+
+| Número total de máquinas virtuais configuradas para proteção usando replicação baseada em array | 2000 | 5000 
+
+
+| Número total de grupos de proteção de replicação baseados em array | 250 | 250 
+
+
+| Número total de grupos de proteção por plano de recuperação | 50 | 50 
+
+
+| Número de datastores replicados | 255 | 255 
+
+
+| Número de VMs | 4000 | 7000 
+|===
+A tabela a seguir mostra o número de SRM e as ferramentas ONTAP correspondentes para o tamanho de implantação do VMware vSphere.
+
+|===
+
+
+| *Número de instâncias SRM* | *Tamanho de implantação de ferramentas ONTAP* 
+
+
+| Até 4 | Pequeno 
+
+
+| 4 a 8 | Média 
+
+
+| Mais de 8 | Grande 
+|===
+Para obter mais informações, https://docs.vmware.com/en/VMware-Live-Recovery/services/vmware-live-site-recovery/GUID-3AD7D565-8A27-450C-8493-7B53F995BB14.html["Limites operacionais da recuperação do VMware Live Site"] consulte .

@@ -1,0 +1,69 @@
+---
+permalink: configure/add-vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: 'As instâncias do vCenter Server são as plataformas de gerenciamento central que permitem controlar hosts, máquinas virtuais (VM) e backends de armazenamento.' 
+---
+= Adicione e gerencie instâncias do vCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O vCenter Server fornece a plataforma de gerenciamento central que permite controlar hosts, máquinas virtuais (VMs) e backends de armazenamento.
+
+
+
+== Adicione uma instância do vCenter Server
+
+*Sobre esta tarefa*
+
+Você pode adicionar e gerenciar várias instâncias do vCenter Server com uma instância de ferramentas do ONTAP para VMware vSphere.
+
+*Passos*
+
+. Inicie o Gerenciador de ferramentas do ONTAP a partir de um navegador da Web: `\https://loadBalanceIP:8443/virtualization/ui/`
+. Faça login com as ferramentas do ONTAP para as credenciais de administrador do VMware vSphere fornecidas durante a implantação.
+. Selecione *vCenters* na barra lateral.
+. Selecione *Adicionar* a instâncias integradas do vCenter Server e forneça seu endereço IP/nome de host do vCenter, nome de usuário, senha e detalhes da porta.
+
+
+Quando você adiciona uma instância do vCenter Server às ferramentas do ONTAP, as seguintes ações são executadas automaticamente:
+
+* O plug-in do vCenter Client está registrado
+* Os Privileges personalizados para os plug-ins e APIs são enviados para a instância do vCenter Server
+* Funções personalizadas são criadas para gerenciar os usuários.
+
+
+
+
+== Registre as ferramentas do ONTAP para o plug-in do VMware vSphere com a instância do vCenter Server
+
+Quando você adiciona uma instância do vCenter Server, as ferramentas do ONTAP para o plug-in do VMware vSphere são registradas automaticamente no vCenter Server como um plug-in remoto. O plug-in fica visível nos atalhos da interface do usuário do vSphere.
+
+O plug-in é registrado com uma chave _com.NetApp.otv_ para a instância do vCenter Server e pode ser visto no Gerenciador de extensões da instância do vCenter Server.
+
+
+
+== Desmarque as ferramentas do ONTAP para o plug-in do VMware vSphere
+
+Você pode cancelar o Registro das ferramentas do ONTAP para o plug-in do VMware vSphere a partir de uma instância do vCenter Server usando as etapas a seguir.
+
+*Passos*
+
+. Inicie o Gerenciador de ferramentas do ONTAP a partir de um navegador da Web: `\https://loadBalanceIP:8443/virtualization/ui/`
+. Faça login com as ferramentas do ONTAP para as credenciais de administrador do VMware vSphere fornecidas durante a implantação.
+. Selecione vCenters na barra lateral.
+. Clique nas elipses verticais em relação ao vCenter que você deseja remover e selecione a opção *Remover*.
++
+
+NOTE: Não é possível remover uma instância do vCenter Server se houver um mapeamento de armazenamento anexado a ela. Você precisa remover o mapeamento antes de remover a instância do vCenter Server.
+
+
+
+Quando você remove instâncias do vCenter Server nas ferramentas do ONTAP, as seguintes ações são executadas automaticamente:
+
+* O plug-in não está registado.
+* As funções plug-in Privileges e plug-in são removidas.
+

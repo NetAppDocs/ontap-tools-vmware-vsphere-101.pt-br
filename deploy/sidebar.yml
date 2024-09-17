@@ -1,0 +1,20 @@
+---
+section: deploy
+title: Implantar as ferramentas do ONTAP para o VMware vSphere
+entries:
+- title: Pré-requisitos
+  url: "/deploy/sizing-requirements.html"
+- title: Faça o download das ferramentas do ONTAP
+  url: "/deploy/download-ontap-tools.html"
+- title: Limites de configuração
+  url: "/deploy/config-limits.html"
+- title: Prepare-se para implantar as ferramentas do ONTAP
+  url: "/deploy/prepare-deployment.html"
+- title: Implante uma configuração de nó único que não seja de HA
+  url: "/deploy/nonha-deployment.html"
+- title: Implantar a configuração de HA
+  url: "/deploy/ha-three-node-deployment.html"
+- title: Recupere suas ferramentas do ONTAP para a configuração do VMware vSphere
+  url: "/deploy/recovery-deployment.html"
+- title: Códigos de erro de implantação
+  url: "/deploy/deployment-error-codes.html"

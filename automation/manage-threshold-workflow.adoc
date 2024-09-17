@@ -1,0 +1,48 @@
+---
+permalink: automation/manage-threshold-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Gerenciar limite de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use a seguinte API Get threshold para recuperar os limites de limite de armazenamento configurados para volume e agregado.
+
+[listing]
+----
+GET​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+Exemplos: Obtenha os limites de armazenamento por instância do vcenter Server pelo vcenter guid
+
+[listing]
+----
+GET "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+----
+Use o SEGUINTE PATCH configure o alarme para volume e agregado para gerar notificação quando os limites de limite configurados forem atingidos.
+
+[listing]
+----
+PATCH​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+Exemplos: Atualize os limites de armazenamento por vCenter pelo vcenter guid. Os limites padrão são 80% para quase-cheio e 90% para cheio. Modificar todas as definições de limiar
+
+[listing]
+----
+{{{}PATCH "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+Request Body
+{
+"volume":
+
+{ "nearly_full_percent": 80, "full_percent": 90 }
+,
+"aggregate": {
+"nearly_full_percent": 80,
+"full_percent": 90
+}
+}{}}}{}
+----

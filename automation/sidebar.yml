@@ -1,0 +1,36 @@
+---
+section: automation
+title: Automatize com o uso de APIS REST
+entries:
+- title: Visão geral das APIs REST
+  url: "/automation/overview-rest-apis.html"
+- title: Como acessar as ferramentas do ONTAP para a API REST do VMware vSphere
+  url: "/automation/how-to-access-rest-api.html"
+- title: Variáveis de entrada que controlam uma solicitação de API
+  url: "/automation/input-variables-control-an-api-request.html"
+- title: Acesse as ferramentas do ONTAP para a documentação de referência da API do
+    VMware vSphere por meio da interface do usuário do Swagger
+  url: "/automation/how-to-access-rest-api-doc-through-the-swagger-user-interface.html"
+- title: Comece a usar a API REST
+  url: "/automation/get-started-with-the-rest-api.html"
+- title: Fluxos de trabalho
+  entries:
+  - title: Detecção de storage
+    url: "/automation/storage-workflow.html"
+  - title: Requisitos de mapeamento de agregados da SVM
+    url: "/automation/svm-workflow.html"
+  - title: Back-end de storage integrado (SVM ou cluster) com uma instância do vCenter
+      Server
+    url: "/automation/onboard-svm-workflow.html"
+  - title: Crie o datastore vVols
+    url: "/automation/create-vvol-workflow.html"
+  - title: Montar e desmontar um datastore vVols
+    url: "/automation/mount-unmount-workflow.html"
+  - title: Expanda ou diminua o armazenamento de dados da vVol
+    url: "/automation/expand-shrink-workflow.html"
+  - title: Exclua o armazenamento de dados vVols
+    url: "/automation/delete-vvol-workflow.html"
+  - title: Gerenciar limite de storage
+    url: "/automation/manage-threshold-workflow.html"
+  - title: Gerencie o acesso à rede
+    url: "/automation/manage-network-workflows.html"

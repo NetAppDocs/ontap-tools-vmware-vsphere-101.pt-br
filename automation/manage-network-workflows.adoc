@@ -1,0 +1,29 @@
+---
+permalink: automation/manage-network-workflows.html 
+sidebar: sidebar 
+keywords: REST API categories 
+summary: Gerencie o acesso à rede 
+---
+= Gerencie o acesso à rede
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use a seguinte API para adicionar endereços IP para listas de permissões:
+
+[listing]
+----
+patch /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+
+GET /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+----

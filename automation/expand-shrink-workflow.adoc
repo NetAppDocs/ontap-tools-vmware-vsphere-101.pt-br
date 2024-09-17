@@ -1,0 +1,101 @@
+---
+permalink: automation/expand-shrink-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Expanda ou diminua o armazenamento de dados da vVol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Há APIs para aumentar ou diminuir o armazenamento disponível.
+
+*Passos*
+
+Use a seguinte API para expandir ou reduzir o armazenamento de dados vVols:
+
+[listing]
+----
+PATCH
+​/virtualization​/api​/v1​/vcenters​/{vcguid}​/vvols​/datastores​/{moref}​/volumes
+----
+Exemplos
+
+* Modifique o datastore vVols para adicionar novo volume
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes
+
+    Request Body
+   {
+    "operation": "grow",
+    "volumes": [{
+        "is_existing": false,
+        "name": "exp3",
+        "size_in_mb": 51200,
+        "space_efficiency": "thin",
+        "aggregate": {
+            "id": "1466e4bf-c6d6-411a-91d5-c4f56210e1ab"
+        },
+        "storage_backend": {
+            "storage_id": "13d86e4f-1fb1-11ee-9509-005056a75778"
+        },
+        "qos": {
+            "max_iops": 5000
+        }
+    }]
+}
+----
+* Modifique o datastore vVols para adicionar o volume existente
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes
+
+    Request Body
+    {
+      "operation": "grow",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----
+* Modifique o armazenamento de dados do vVols para remover o volume e excluir o volume do armazenamento
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes?delete_volumes=true
+
+    Request Body
+    {
+      "operation": "shrink",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----
+* Modifique o armazenamento de dados do vVols para remover o volume e não exclua o volume do armazenamento
+
+
+[listing]
+----
+  PATCH virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores/datastore-24/volumes?delete_volumes=false
+
+    Request Body
+    {
+      "operation": "shrink",
+      "volumes": [{
+        "is_existing": true,
+        "id": "vfded9ad-6bsd-4c9e-b44g-691250bfe2sd"
+      }]
+    }
+----

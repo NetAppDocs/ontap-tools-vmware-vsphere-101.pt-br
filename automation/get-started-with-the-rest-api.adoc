@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: automation/get-started-with-the-rest-api.html 
+keywords: REST API 
+summary: Acessar a API fornece alguma perspetiva antes de começar a usá-la com os processos de fluxo de trabalho mais complexos em uma configuração ao vivo. 
+---
+= Comece a usar a API REST
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode começar rapidamente a usar as ferramentas do ONTAP para a API REST do VMware vSphere. Acessar a API fornece alguma perspetiva antes de começar a usá-la com os processos de fluxo de trabalho mais complexos em uma configuração ao vivo.
+
+
+
+== Olá mundo
+
+Você pode executar um comando simples no seu sistema para começar a usar as ferramentas do ONTAP para a API REST do VMware vSphere e confirmar sua disponibilidade.
+
+.Antes de começar
+* Certifique-se de que o utilitário Curl está disponível no seu sistema.
+* Endereço IP ou nome de host das ferramentas do ONTAP para o servidor VMware vSphere
+* Nome de usuário e senha de uma conta com autoridade para acessar as ferramentas do ONTAP para a API REST do VMware vSphere.
+
+
+
+NOTE: Se suas credenciais incluem carateres especiais, você precisa formatá-los de uma forma aceitável para Curl com base no shell que você está usando. Por exemplo, você pode inserir uma barra invertida antes de cada caractere especial ou envolver toda `username:password` a cadeia em aspas simples.
+
+.Passo
+Na interface da linha de comando, execute o seguinte para recuperar as informações do plug-in:
+
+`curl -X GET -u username:password -k "\https://<ip_address>/api/hosts?fields=IncludePluginInfo"`
+
+Exemplo:
+
+`curl -X GET -u admin:password -k "'\https://10.225.87.97/api/hosts?fields=IncludePluginInfo"`

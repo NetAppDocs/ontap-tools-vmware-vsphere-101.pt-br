@@ -1,0 +1,55 @@
+---
+permalink: deploy/prepare-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Você deve implantar as ferramentas do ONTAP para o VMware vSphere em seu ambiente e especificar os parâmetros necessários para poder usar o dispositivo. 
+---
+= Prepare-se para implantar as ferramentas do ONTAP para o VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve estar ciente dos requisitos básicos de back-end de storage, requisitos de aplicativos e requisitos de licença antes de começar a implantar as ferramentas do ONTAP para o VMware vSphere. Planeje sua implantação com antecedência e decida como você deseja configurar as ferramentas do ONTAP para o VMware vSphere em seu ambiente.
+
+
+
+== Preparando-se para a implantação
+
+A seguir estão as ferramentas do ONTAP para os requisitos do VMware vSphere antes de prosseguir com a implantação:
+
+. Configure e configure seu ambiente do vCenter Server.
+. Transfira o ficheiro _.ova_.
+. (Opcional) usado para o usuário de automação - reúna o arquivo JSON de coleções Postman fornecido pelo NetApp.
+. Credenciais do vCenter Server pai para implantar o OVA. A senha do vCenter Server pai não deve conter esses carateres especiais (
+. Certifique-se de que o host ou o pool de recursos onde o OVA é implantado tenha os recursos mínimos mencionados na link:../deploy/sizing-requirements.html["Pré-requisitos para implantar ferramentas do ONTAP para VMware vSphere"]seção.
+. As credenciais de login da sua instância do vCenter Server à qual as ferramentas do ONTAP para VMware vSphere se conetarão ao pós-implantação para Registro.
+. Exclua o cache do navegador.
+. Para implantação que não seja de HA, você precisa de três endereços IP gratuitos: Um endereço IP gratuito para balanceador de carga e um endereço IP gratuito para o plano de controle do Kubernetes e um endereço IP para nó. Para a implantação de HA, juntamente com esses três endereços IP, você precisará de mais dois endereços IP para segundo e terceiro nós. Os nomes de host devem ser mapeados para os endereços IP gratuitos no DNS antes de atribuir. Todos os cinco endereços IP devem estar na mesma VLAN selecionada para implantação.
+. O modelo de biblioteca de conteúdo, uma vez carregado, não deve ser excluído após a implantação, pois ele será usado durante as reinicializações.
+. Em uma implantação multi-vCenter em que os certificados de CA personalizados são obrigatórios, mapeie o nome de domínio no qual o certificado é emitido para o endereço IP virtual. Execute uma verificação _nslookup_ no nome de domínio para verificar se o domínio está sendo resolvido para o endereço IP pretendido. Os certificados devem ser criados com nome de domínio e endereço IP do endereço IP do balanceador de carga.
+. VLAN suportada IPv4/IPv6.1Q - o Pure IPv6 não é suportado. O modo misto é suportado com VLAN com endereços IPv6 e IPv4.
+. Servidor NTP que é fornecido ao vCenter Server para sincronização de tempo.
+. Detalhes de configuração do nó ou VM onde o OVA está sendo implantado (obrigatório) e outros detalhes.
++
+.. Nome do host do vCenter Server (vCenter onde o OVA é implantado)
+.. Nome de usuário do vCenter Server (vCenter onde o OVA é implantado)
+.. Senha do vCenter Server (vCenter onde o OVA é implantado)
+.. Pool de recursos
+.. LIF de dados (IPv4/IPv6)
+.. LIF de gerenciamento
+.. Nome de usuário do ONTAP
+.. Palavra-passe ONTAP
+.. Nome do SVM
+.. Protocolo
+.. Endereços IP virtuais para o plano de controle do Kubernetes.
+.. Lista pendente HA/NÃO HA
+.. Lista de nomes de host
+.. Endereços IP (string)
+.. Nome da biblioteca de conteúdo
+.. Nome do modelo OVF
+.. Gateway IPv6 (opcional)
+
+
+

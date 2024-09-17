@@ -1,0 +1,42 @@
+---
+permalink: automation/storage-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Detecção de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O intervalo de deteção pode ser configurado como parte do mapa de configuração. A descoberta programada é executada a cada 60 minutos. A API fornecida aqui é executar a descoberta sob demanda para um determinado back-end de storage que é adicionado no escopo local.
+
+Use a seguinte API para executar a descoberta:
+
+[listing]
+----
+POST
+/virtualization/api/v1/vcenters/{vcguid}/storage-backends/{id}/discovery-jobs
+----
+
+NOTE: Consulte fluxo de trabalho de back-end de storage integrado (SVM ou cluster) e obtenha ID da resposta da API de back-end pós-storage.
+
+A descoberta deste ponto de extremidade da API é suportada apenas para backends de armazenamento com escopo local e não para os backends de armazenamento com escopo global. Se o tipo de back-end de armazenamento for cluster, a descoberta será executada implicitamente para os SVMs filho. Se o tipo de back-end de storage for SVM, a detecção será executada somente na SVM selecionada.
+
+Exemplo:
+
+Para executar a descoberta em um back-end de storage especificado por ID
+
+[listing]
+----
+POST
+/api/v1/vcenters/3fa85f64-5717-4562-b3fc-2c963f66afa6/storage-backends/74e85f64-5717-4562-b3fc-2c963f669dde/discovery-jobs
+----
+Você precisa passar o x-auth para a API. Você pode gerar esse x-auth a partir da nova API adicionada em Auth no Swagger.
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----

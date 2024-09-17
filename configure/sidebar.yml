@@ -1,0 +1,37 @@
+---
+section: configure
+title: Configurar ferramentas do ONTAP
+entries:
+- title: Interface de usuário do Gerenciador de ferramentas do ONTAP
+  url: "/configure/manager-user-interface.html"
+- title: Adicione e gerencie o vCenter Server
+  url: "/configure/add-vcenter.html"
+- title: Registre o provedor VASA no vCenter Server
+  url: "/configure/registration-process.html"
+- title: Verifique o provedor VASA registrado
+  url: "/configure/verify-registration.html"
+- title: Instale o plug-in NFS VAAI
+  url: "/configure/install-nfs-vaai-plug-in.html"
+- title: Atualizar dados do host
+  url: "/configure/update-host-data.html"
+- title: Configure as configurações do host ESXi
+  entries:
+  - title: Configure as configurações multipath e timeout do servidor ESXi
+    url: "/configure/configure-esx-server-multipath-and-timeout-settings.html"
+  - title: Defina os valores do host ESXi
+    url: "/configure/esxi-host-values.html"
+- title: Descubra sistemas de storage e hosts
+  url: "/configure/discover-storage-systems-and-hosts.html"
+- title: Adicionar um back-end de storage
+  url: "/configure/add-storage-backend.html"
+- title: Associar um back-end de storage a uma instância do vCenter Server
+  url: "/configure/associate-storage-backend.html"
+- title: Configurar o acesso à rede
+  url: "/configure/configure-network-access.html"
+- title: Configurar as funções de usuário do ONTAP e o Privileges
+  url: "/configure/configure-user-role-and-privileges.html"
+- title: Visão geral das ferramentas do NetApp ONTAP para o painel de plugins do VMware
+    vSphere
+  url: "/configure/dashboard-overview.html"
+- title: Crie um datastore
+  url: "/configure/create-vvols-datastore.html"

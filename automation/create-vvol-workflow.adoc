@@ -1,0 +1,64 @@
+---
+permalink: automation/create-vvol-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um fluxo de trabalho é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. 
+---
+= Crie o datastore vVols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar o datastore vVols com novos volumes ou com volumes existentes. Você também pode criar o datastore vVols com a combinação de volumes existentes e novos volumes.
+
+
+NOTE: Verifique se os agregados raiz não estão mapeados para o SVM.
+
+Gere um token JWT antes de criar datastores ou aumente a expiração do token SAML definindo 'Maximum Bearer Token Lifetime' para 60m no vCenter.
+
+Você precisa passar o x-auth para a API. Você pode gerar esse x-auth a partir da nova API adicionada em Auth no Swagger.
+
+/virtualization/api/v1/auth/vcenter-login
+
+. Crie datastore vVols com novo volume.
+
+
+Obter id agregado, storage_id (SVM uuid) usando a API REST do ONTAP. POST /Virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores
+
+Use o seguinte URI para verificar o status:
+
+E
+
+[listing]
+----
+`\https://xx.xx.xx.xxx:8443/virtualization/api/jobmanager/v2/jobs/<JobID>?includeSubJobsAndTasks=true`
+----
+Corpo de solicitação para armazenamento de dados NFS
+
+selecione "nome":"nfsds1 3827 5000", "protocolo":"nfs", "platform_type":"AFF", "moref":"domínio-c8 9273 11ee", "volumes":[ "is_existing":false, "name":"vol_nfs_pvt", "size_in_mb":2048000 200, "space_efficiency
+
+Selecione o arquivo de dados para o armazenamento de dados iSCSI: "Nome" : "iscsi_custom", "protocolo" : "iscsi", "Platform_type": "AFF", "moref" : "domain-C8", "volumes" : "is_existing" : false, "name" : "iscsi_custom", "size_in_mb" :, "space_efficiency_" : "11ee" : "9506" : "" : "armazenamento de dados_1960" : "armazenamento de dados_igroup1" : "armazenamento de dados_bb2d": "Armazenamento de dados": "8034": "Armazenamento de dados_E461" Crie datastore vVols com volumes existentes.
+
+Obtenha o Aggregate_id e o volume_id usando a API REST do ONTAP.
+
+ POST /virtualization/api/v1/vcenters/cdded9ad-6bsd-4c9e-b44g-691250bfe2df/vvols/datastores
+Solicitar corpo
+
+....
+ {
+"name" : "nfsds2",
+"protocol" : "nfs",
+"platform_type": "aff",
+"moref" : "domain-c8",
+"volumes" : [
+    {
+          "is_existing": true,
+          "id": "e632a632-1412-11ee-8a8c-00a09860a3ff"
+        }
+],
+"storage_backend": {
+                    "storage_id": "33a8b6b3-10cd-11ee-8a8c-00a09860a3ff"    }
+....
+Selecione
