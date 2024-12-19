@@ -52,4 +52,5 @@ A seguir estão as ferramentas do ONTAP para os requisitos do VMware vSphere ant
 .. Gateway IPv6 (opcional)
 
 
+. Antes de instalar as ferramentas do ONTAP para VMware vSphere 10,1 em configurações avançadas e de HA não-HA, consulte o artigo da KB: https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/pre-requisites_for_installing_OTV_10.1_and_10.2_in_NonHA_Advanced_and_HA["Pré-requisitos para configuração avançada e HA não-HA"].
 

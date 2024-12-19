@@ -1823,4 +1823,6 @@
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">Notas de versão</block>
   <block id="ed8359854c43609fca7bc8a46cca9eac" category="sidebar">Comparação de recursos das ferramentas ONTAP 9 e ONTAP 10</block>
   <block id="a2fa58344be7fbd9a2be0320a8df0f77" category="sidebar">Atualizar as ferramentas do ONTAP</block>
+  <block id="f6e2644fce556a8207829c90c0760e9e" category="inline-link">Pré-requisitos para configuração avançada e HA não-HA</block>
+  <block id="1194197b73e30573b06eeec54d3ca76d" category="list-text">Antes de instalar as ferramentas do ONTAP para VMware vSphere 10,1 em configurações avançadas e de HA não-HA, consulte o artigo da KB:<block ref="e4dee65de4069a83bb14c7c7d5ee3ead" category="inline-link-rx"></block>.</block>
 </blocks>
