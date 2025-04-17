@@ -1774,7 +1774,6 @@
   <block id="3f50e7c6b4d426580688c6da56153793" category="list-text">Atualização do certificado</block>
   <block id="ef68cd44177b6a31df6410ebc4f7c5e1" category="list-text">Atualização remota do plug-in</block>
   <block id="8f7be3c874feb6ef0fd5f20afd8d5fbb" category="sidebar">As ferramentas do ONTAP para o VMware vSphere permitem configurar, gerenciar e proteger seus datastores virtuais no ambiente do vCenter Server.</block>
-  <block id="26ffc687a7267f96a389530199971cd1" category="sidebar">Ferramentas do ONTAP para documentação do VMware vSphere</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Comece agora</block>
   <block id="da951ef1610be90b45b31baf7b25b179" category="sidebar">Saiba mais sobre as ferramentas do ONTAP para VMware vSphere</block>
   <block id="2a03ee5b0887b8a6bf23fd52456544db" category="sidebar">Implantar as ferramentas do ONTAP para o VMware vSphere</block>
@@ -1825,4 +1824,5 @@
   <block id="a2fa58344be7fbd9a2be0320a8df0f77" category="sidebar">Atualizar as ferramentas do ONTAP</block>
   <block id="f6e2644fce556a8207829c90c0760e9e" category="inline-link">Pré-requisitos para configuração avançada e HA não-HA</block>
   <block id="1194197b73e30573b06eeec54d3ca76d" category="list-text">Antes de instalar as ferramentas do ONTAP para VMware vSphere 10,1 em configurações avançadas e de HA não-HA, consulte o artigo da KB:<block ref="e4dee65de4069a83bb14c7c7d5ee3ead" category="inline-link-rx"></block>.</block>
+  <block id="a62e9d532f8887c09395a1edc29c465f" category="sidebar">Ferramentas do ONTAP para documentação do VMware vSphere 10,1</block>
 </blocks>
